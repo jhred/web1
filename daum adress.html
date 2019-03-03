@@ -41,7 +41,7 @@ var marker = new daum.maps.Marker(), // 클릭한 위치를 표시할 마커입�
 searchAddrFromCoords(map.getCenter(), displayCenterInfo);
 
 // 지도를 클릭했을 때 클릭 위치 좌표에 대한 주소정보를 표시하도록 이벤트를 등록합니다
-daum.maps.event.addListener(map, 'click', function(mouseEvent) {
+daum.maps.event.addListener(map, 'rightclick', function(mouseEvent) {
     searchDetailAddrFromCoords(mouseEvent.latLng, function(result, status) {
         if (status === daum.maps.services.Status.OK) {
             var detailAddr = !!result[0].road_address ? '<div>도로명주소 : ' + result[0].road_address.address_name + '</div>' : '';
